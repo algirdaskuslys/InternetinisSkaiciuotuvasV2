@@ -12,6 +12,7 @@ import org.springframework.validation.Validator;
 // @Component (and @Service and @Repository) are used to auto-detect and auto-configure beans using classpath scanning.
 // @Component auto detects and configures the beans using classpath scanning whereas @Bean explicitly declares a single bean, rather than letting Spring do it automatically.
 // @Component is a class level annotation whereas @Bean is a method level annotation and name of the method serves as the bean name.
+// @Bean is used to explicitly declare a single bean, rather than letting Spring do it automatically as above.
 public class UserValidator implements Validator {
     @Autowired
     private UserService userService;
