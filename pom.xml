@@ -27,6 +27,11 @@
     </properties>
     -->
     <dependencies>
+        <!-- priešingu atveju neranda jsp žymų <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
         <!-- sukonfigūruotas Spring Boot web aplikacijoms -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
