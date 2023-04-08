@@ -43,4 +43,18 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
     }
+
+    // https://www.marcobehler.com/guides/spring-security
+    /*
+
+        public class MyDatabaseUserDetailsService implements UserDetailsService {
+
+          UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+             User user = userDao.findByUsername(username);
+             List<SimpleGrantedAuthority> grantedAuthorities = user.getAuthorities().map(authority -> new SimpleGrantedAuthority(authority)).collect(Collectors.toList()); // (1)
+             return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities); // (2)
+          }
+
+        }
+    */
 }
