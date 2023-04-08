@@ -25,6 +25,8 @@ public class SecurityServiceImpl implements SecurityService{
     private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
 
     @Override
+    // Naudojamas vartotojo vardo atvaizdavimui menu.jsp formoje, t.y. kur rašoma 'Atsijungti, Algis'
+    // ${pageContext.request.userPrincipal.name != null}">
     public String findLoggedInUsername() {
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
         if (userDetails instanceof UserDetails) {
@@ -35,6 +37,7 @@ public class SecurityServiceImpl implements SecurityService{
     }
 
     @Override
+    // Naudojamas vartotojo prisijungimui prie sistemos
     public void autoLogin(String username, String password) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 

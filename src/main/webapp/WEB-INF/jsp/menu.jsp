@@ -38,7 +38,7 @@
                         -->
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     </form>
-                    <a onclick="document.forms['logoutForm'].submit()">Logout, ${pageContext.request.userPrincipal.name}</a>
+                    <a onclick="document.forms['logoutForm'].submit()">Atsijungti, ${pageContext.request.userPrincipal.name}</a>
                 </c:if>
         </ul>
     </div>
