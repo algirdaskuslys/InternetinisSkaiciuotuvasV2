@@ -1,7 +1,6 @@
 package com.spring.calculator.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -14,14 +13,11 @@ public class User {
 
     private String password;
 
+    private String authorities;
+
     // Laukai, pažymėti raktažodžiu transient NEbus saugomi į db
     @Transient
     private String passwordConfirm;
-
-    // DAUG-SU-DAUG - tai ryšys tarp dviejų lentelių, kur keletas eilučių iš vienos lentelės gali turėti
-    // keletą atitinkančių eilučių iš kitos lentelės.
-    @ManyToMany
-    private Set<Role> roles;
 
     public Long getId() {
         return id;
@@ -55,16 +51,12 @@ public class User {
         this.passwordConfirm = passwordConfirm;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public String getAuthorities() {
+        return authorities;
     }
 
-    public void setRoles(Set<Role> roles) {
-        for (Role role: roles) {
-            if (role.getName().equals("user")) {
-                this.roles = roles;
-            }
-        }
-        //this.roles = roles;
+    public void setAuthorities(String authorities) {
+        this.authorities = authorities;
     }
+
 }
