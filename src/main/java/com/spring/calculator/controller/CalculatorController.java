@@ -96,6 +96,7 @@ public class CalculatorController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/skaiciai")
     public String getAllNumbers(Model model) {
+        //TODO: gal cia kazka reikes prideti
         model.addAttribute("skaiciai", numberService.getAll());
         return "skaiciai";
     }
@@ -157,6 +158,11 @@ public class CalculatorController {
             model.addAttribute("message", "Sėkmingai atsijungėte");
 
         return "prisijungti";
+    }
+
+    @GetMapping("/403")
+    public String _403() {
+        return "403";
     }
 
 }

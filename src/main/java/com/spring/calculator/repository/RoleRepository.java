@@ -3,6 +3,9 @@ package com.spring.calculator.repository;
 import com.spring.calculator.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+import java.util.Optional;
+
 /*
     O kas, jeigu nenorime rūpintis paprastomis užklausomis, juk jos visada vienodos.
     Mes nenorime išradinėti dviračio.
@@ -26,4 +29,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
         findFirst.., findTop.., findDistinct.., findUser.., findFirstUser.., findDistinctUser..
  */
 public interface RoleRepository extends JpaRepository<Role, Long>{
+    List<Role> findByName(String name);
 }

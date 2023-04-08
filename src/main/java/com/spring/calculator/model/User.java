@@ -60,6 +60,11 @@ public class User {
     }
 
     public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+        for (Role role: roles) {
+            if (role.getName().equals("user")) {
+                this.roles = roles;
+            }
+        }
+        //this.roles = roles;
     }
 }

@@ -30,7 +30,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/resources/**", "/registruoti").permitAll() // leidžiame registruotis neprisijungusiems vartotojams
+                .antMatchers("/resources/**", "/skaiciai").hasRole("admin") // tik admin gali matyti visas atliktas skaičiavimo operacijas
+                .antMatchers("/resources/**", "/registruoti") // leidžiame registruotis neprisijungusiems vartotojams
+                .permitAll()
                 .anyRequest().authenticated() // kiti puslapiai pasiekiami tik prisijungusiems (autorizuotiems) vartotojams
                 .and()
             .formLogin() // neprisijungusiam vartotojui leidžiame prieiti prie prisijungimo puslapio
@@ -38,7 +40,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
             .logout() // leidžiame visiems atsijungti
-                .permitAll();
+                .permitAll()
+                .and()
+                .exceptionHandling().accessDeniedHandler(new CustomAccessDeniedHandler());
     }
 
     @Bean
