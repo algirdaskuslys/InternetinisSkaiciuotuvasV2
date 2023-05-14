@@ -22,7 +22,7 @@ public class Number {
     @Column(name = "zenklas")
     private String zenklas;
 
-    @Column(name = "rezult")
+    @Column(name = "rezultatas")
     private int rezult;
 
     //@Pattern(regexp="[A-Za-z]{5,15}+", message="Klaidingai ivestas vardas!")

@@ -43,7 +43,7 @@ public class CalculatorController {
     // kitu atveju metama klaida:
     // 'Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans,
     // or using @Qualifier to identify the bean that should be consumed'
-    @Qualifier("NumberService")
+    @Qualifier("NumberServiceImpl")
     public NumberService numberService;
 
     // Maršrutizavimo informacija. Šiuo atveju, ji nurodo Spring karkasui,
@@ -96,7 +96,6 @@ public class CalculatorController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/skaiciai")
     public String getAllNumbers(Model model) {
-        //TODO: gal cia kazka reikes prideti
         model.addAttribute("skaiciai", numberService.getAll());
         return "skaiciai";
     }

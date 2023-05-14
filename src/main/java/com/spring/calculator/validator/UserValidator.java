@@ -9,10 +9,11 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 @Component
-// @Component (and @Service and @Repository) are used to auto-detect and auto-configure beans using classpath scanning.
-// @Component auto detects and configures the beans using classpath scanning whereas @Bean explicitly declares a single bean, rather than letting Spring do it automatically.
-// @Component is a class level annotation whereas @Bean is a method level annotation and name of the method serves as the bean name.
-// @Bean is used to explicitly declare a single bean, rather than letting Spring do it automatically as above.
+// @Component (ir @Service ir @Repository) naudojami automatiškai aptikti ir automatiškai konfigūruoti beans naudojant klasės kelio nuskaitymą.
+// Tai reiškia, kad mums nereikia apsirašyti, šiuo atveju, @Bean UserService @Configuration SpringConfig klasėje.
+// @Component automatiškai aptinka ir sukonfigūruoja beans naudodamas klasės kelio nuskaitymą,
+// kai tuo tarpu @Bean anotacija aiškiai deklaruoja tik vieną bean, o ne leidžia Spring tai padaryti automatiškai.
+// @Component yra klasės lygio anotacija, o @Bean yra metodo lygio anotacija kur metodo pavadinimas naudojamas kaip bean pavadinimas.
 public class UserValidator implements Validator {
     @Autowired
     private UserService userService;

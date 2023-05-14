@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `skaiciai` (
   `id` int(11) NOT NULL,
-  `rezult` int(11) DEFAULT NULL,
+  `rezultatas` int(11) DEFAULT NULL,
   `sk1` int(11) DEFAULT NULL,
   `sk2` int(11) DEFAULT NULL,
   `zenklas` varchar(255) DEFAULT NULL
@@ -40,7 +40,7 @@ CREATE TABLE `skaiciai` (
 -- Dumping data for table `skaiciai`
 --
 
-INSERT INTO `skaiciai` (`id`, `rezult`, `sk1`, `sk2`, `zenklas`) VALUES
+INSERT INTO `skaiciai` (`id`, `rezultatas`, `sk1`, `sk2`, `zenklas`) VALUES
 (16, 20, 10, 10, '+'),
 (17, 20, 10, 10, '+'),
 (18, 20, 10, 10, '+'),

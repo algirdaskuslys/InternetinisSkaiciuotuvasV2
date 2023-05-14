@@ -24,13 +24,13 @@ public class SpringConfig {
 	// kitu atveju metama klaida:
 	// 'Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans,
 	// or using @Qualifier to identify the bean that should be consumed'
-	@Qualifier("NumberDAO")
+	@Qualifier("NumberDAOImpl")
 	public NumberDAO getNumberDAO() {
 		return new NumberDAOImpl();
 	}
 
 	@Bean
-	@Qualifier("NumberService")
+	@Qualifier("NumberServiceImpl")
 	public NumberService getNumberService() {
 		return new NumberServiceImpl();
 	}
