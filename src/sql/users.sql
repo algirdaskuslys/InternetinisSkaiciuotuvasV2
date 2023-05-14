@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `id` bigint(20) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `password`, `username`, `authorities`) VALUES
+INSERT INTO `users` (`id`, `password`, `username`, `authorities`) VALUES
 (2, '$2a$10$VWpOaEIzvYn3v3KagH2zz.RrjawlOZVrARKuyPIWybO6vJ3x11xAm', 'user', 'user'),
 (3, '$2a$10$ckdpvlQ5IqRsz0RXT5BIYuTXq8.f0VIfeZj0iCmCzys/3rileKV9e', 'admin', 'user'),
 (4, '$2a$10$VgzpGeXbt8iIlo1l3XQ.bO1eZ.7lsoxErJIVY4vouGyoigCQcjClq', 'petras', 'user'),
@@ -71,7 +71,7 @@ INSERT INTO `user` (`id`, `password`, `username`, `authorities`) VALUES
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -81,7 +81,7 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE `users`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
